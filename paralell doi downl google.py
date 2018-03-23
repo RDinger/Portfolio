@@ -1,15 +1,13 @@
 """
-https://code.tutsplus.com/articles/introduction-to-parallel-and-concurrent-programming-in-python--cms-28612
-DOI download
+# STILL TESTING!!!!
+DOI download from academic papers and put in a csv file for processing for meta analyses.
 22-01-18, using threading
 seem to work: 10 seconds for 23 references using 4 workers
       7 seconds for 23 references using 6 workers
       104 seconds for 363 references (from Vachon, 2014)
 
-28-01-18: using google scholar, it doesn't work due to blocking
-
-possible other source
-http://edmundmartin.com/concurrent-crawling-in-python/
+28-01-18: using google scholar, it doesn't work due to blocking. Gets blocked after a while. 
+02-02-18: User_Agent added (line 33). Doesn't seem to make the difference...
 
 """
 
@@ -101,8 +99,7 @@ def notify_owner(doi):
     """ 
     Send the owner of the address a notification that their website is down 
      
-    For now, we're just going to sleep for 0.5 seconds but this is where 
-    you would send an email, push notification or text-message
+    wait 0.5 sec
     """
     logging.info("Notifying the owner of %s website" % doi)
     time.sleep(0.5)
@@ -110,7 +107,7 @@ def notify_owner(doi):
  
 def check_website(doi):
     """
-    Utility function: check if a website is down, if so, notify the user
+    Utility function: check if a website is down, if so, send notification
     """
     try:
         Downl_doi(doi)
@@ -126,7 +123,7 @@ def check_website(doi):
 from queue import Queue
 from threading import Thread
 
-NUM_WORKERS = 4  # NON-LINEAR!! Double the workers does not double speed!
+NUM_WORKERS = 4  # NON-LINEAR!! Double the workers does not halve the time!
 task_queue = Queue()
  
 def worker():
