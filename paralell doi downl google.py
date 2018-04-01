@@ -29,7 +29,7 @@ with open (output_file,'r') as f:
     DOI_LIST= f.readlines()
 
 # headers for webscraper (test)
-USER_AGENT = {'User-Agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36'}
+USER_AGENT = {'User-Agent':'Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:59.0) Gecko/20100101 Firefox/59.0'}
  
 
 # classes and functions
