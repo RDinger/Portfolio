@@ -21,8 +21,8 @@ Dit script maakt enkel gebruik van de standaard libararies van Python
 import os,time, os.path, datetime, sys
 
 CurrentTime=time.strftime("%d-%m-%Y %H:%M:%S")
-path=r"C:\pad\naar\locatie"
-targetPath=r"C:\pad\naar\locatie\voor\kopieren\bestanden"
+path=r"C:\path\to\location"
+targetPath=r"C:\path\to\location\for\copying\files"
 
 def EmailBody(File_List):    
     print("Building up e-mail body...")
