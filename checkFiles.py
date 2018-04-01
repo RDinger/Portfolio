@@ -2,7 +2,7 @@
 """
 Created on Thu Feb 22 21:14:01 2018
 
-@author: Remy Hertogs
+@author: Remy H
 Email functie maakt gebruik van
 1)config.ini om log in gegevens gebruiker en server op te halen.
 2)tijden checkFiles.txt; leeg tekstbestand waar tijden laatste check worden weggeschreven. In dezelfde map als script.
