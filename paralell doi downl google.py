@@ -39,8 +39,7 @@ class WebsiteDownException(Exception):
  
 def Downl_doi(doi, timeout=20):
     """
-    Check if a website is down. A website is considered down 
-    if either the status_code >= 400 or if the timeout expires
+    For every doi reference in the file/ list/ whatever, download meta data from google.scholar
      
     """
     global df, Error_list, Error_count
